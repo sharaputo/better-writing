@@ -112,7 +112,7 @@
   }
   .btn {
     font-size: 1.6rem;
-    padding: 13px 20px;
+    padding: 13px 15px;
   }
   .changes {
     &__title {
@@ -217,6 +217,33 @@
     &__caption {
       font-size: 1.2rem;
       padding: 18px 28px;
+    }
+  }
+  .popup {
+    &__content {
+      padding: 60px 15px 40px;
+    }
+    &__text {
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+    }
+    &__input {
+      & + & {
+        margin-top: 10px;
+      }
+      input {
+        padding: 10px;
+      }
+    }
+    // &__error {
+    // }
+    &__success {
+      background-color: @blue-light;
+      padding: 50px 15px 30px;
+    }
+    &__icon {
+      max-width: 50px;
+      margin-bottom: 15px;
     }
   }
   .section-padding {

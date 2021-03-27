@@ -132,6 +132,90 @@ body {
 .fluid-img {
   width: 100%;
 }
+.hystmodal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  opacity: 1;
+  visibility: hidden;
+  pointer-events: none;
+  overflow: hidden;
+  overflow-y: auto;
+  z-index: 99;
+  &--active {
+    opacity: 1;
+    .hystmodal__window {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  &--active,
+  &--moved {
+    visibility: visible;
+    pointer-events: auto;
+  }
+  &__opened,
+  &__shadow {
+    position: fixed;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+  }
+  &__shadow {
+    display: block;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s @anim-fast;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 98;
+    &--show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+  &__wrap {
+    width: 100%;
+    min-height: 100%;
+    flex-shrink: 0;
+    flex-grow: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
+  &__window {
+    width: auto;
+    max-width: 100%;
+    flex-shrink: 0;
+    flex-grow: 0;
+    display: flex;
+    background-color: @white;
+    opacity: 0;
+    margin: 50px 15px;
+    transition: transform @anim-slow, opacity @anim-slow;
+    transform: scale(0.9);
+    overflow: visible;
+  }
+  &__close {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    display: block;
+    width: 15px;
+    height: 15px;
+    z-index: 10;
+  }
+}
 .polaroid {
   position: relative;
   max-width: 530px;
@@ -168,6 +252,73 @@ body {
     padding-right: 50px;
     padding-bottom: 50px;
     padding-left: 50px;
+  }
+}
+.popup {
+  &__content {
+    background-color: @blue-light;
+    padding: 115px 60px;
+  }
+  &__text {
+    max-width: 280px;
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-align: center;
+    color: @white;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-left: auto;
+  }
+  &__form {
+  }
+  &__input {
+    & + & {
+      margin-top: 15px;
+    }
+    input {
+      width: 100%;
+      font-size: 1.6rem;
+      font-weight: 300;
+      line-height: 1.2;
+      color: @black;
+      background-color: @white;
+      padding: 15px;
+      &::placeholder {
+        color: #979797;
+      }
+    }
+  }
+  &__error {
+    display: none;
+  }
+  &__btn {
+    width: 100%;
+    display: block;
+    font-family: @font;
+    font-size: 1.6rem;
+    font-weight: 800;
+    line-height: 1.25;
+    text-align: center;
+    text-transform: uppercase;
+    color: @white;
+    background-color: @yellow;
+    padding: 18px 0;
+    transition: background-color @anim-slow;
+    margin-top: 20px;
+    &:hover,
+    &:focus {
+      background-color: @yellow-hover;
+    }
+  }
+  &__success {
+    background-color: @blue-light;
+    padding: 60px 120px;
+  }
+  &__icon {
+    max-width: 50px;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-left: auto;
   }
 }
 .screen-reader {
