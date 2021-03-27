@@ -1,12 +1,31 @@
+.about {
+  padding-bottom: 90px;
+  &__title {
+    margin-bottom: 30px;
+  }
+  &__subtitle {
+    margin-bottom: 15px;
+  }
+  &__polaroid {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__highlight {
+    max-width: 600px;
+    font-family: @caption;
+    font-style: italic;
+    font-weight: 400;
+    color: @blue-light;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}
 .hero {
   padding-top: 40px;
   padding-bottom: 90px;
-  &__body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
   &__title {
     margin-bottom: 25px;
   }

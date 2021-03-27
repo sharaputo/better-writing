@@ -15,6 +15,16 @@
     font-size: 1.6rem;
     padding-top: 63px;
   }
+  .about {
+    padding-bottom: 40px;
+    &__title {
+      margin-bottom: 20px;
+    }
+    &__polaroid {
+      margin-top: 25px;
+      margin-bottom: 25px;
+    }
+  }
   .block-subtitle {
     font-size: 1.8rem;
   }
@@ -84,6 +94,27 @@
     }
     &__video {
       margin-bottom: 25px;
+    }
+  }
+  .polaroid {
+    padding: 15px;
+    &__wrapper {
+      padding: 20px 20px 0;
+    }
+    &::before,
+    &::after {
+      width: 66px;
+      height: 18px;
+    }
+    &::before {
+      top: 10px;
+    }
+    &::after {
+      bottom: 10px;
+    }
+    &__caption {
+      font-size: 1.2rem;
+      padding: 18px 28px;
     }
   }
   .section-subtitle {

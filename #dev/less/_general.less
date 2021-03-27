@@ -61,6 +61,44 @@ body {
 .fluid-img {
   width: 100%;
 }
+.polaroid {
+  position: relative;
+  max-width: 530px;
+  padding: 25px;
+  &__wrapper {
+    background-color: @grey;
+    padding: 40px 40px 0;
+  }
+  &::before,
+  &::after {
+    width: 120px;
+    height: 33px;
+    content: url('../img/polaroid.svg');
+    position: absolute;
+  }
+  &::before {
+    top: 10px;
+    left: 0;
+  }
+  &::after {
+    right: 0;
+    bottom: 10px;
+    transform: rotate(180deg);
+  }
+  &__caption {
+    font-family: @caption;
+    font-style: italic;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.25;
+    text-align: center;
+    color: @black;
+    padding-top: 35px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+  }
+}
 .screen-reader {
   border: 0;
   clip: rect(0 0 0 0);
@@ -72,6 +110,12 @@ body {
   white-space: nowrap;
   width: 1px;
 }
+.section-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 .section-subtitle {
   font-size: 2.6rem;
   font-weight: 800;
@@ -80,13 +124,9 @@ body {
   color: @blue-dark;
 }
 .section-text {
-  &--bold {
-    font-weight: 800;
-    color: @blue-dark;
-  }
-  &--italics {
-    font-style: italic;
-    color: @blue-light;
+  max-width: 650px;
+  & + & {
+    margin-top: 15px;
   }
 }
 .section-title {
@@ -94,5 +134,9 @@ body {
   font-weight: 800;
   line-height: 1.13;
   text-align: center;
+  color: @blue-dark;
+}
+.text-bold {
+  font-weight: 800;
   color: @blue-dark;
 }
