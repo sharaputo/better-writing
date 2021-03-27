@@ -152,6 +152,89 @@
     margin-bottom: 35px;
   }
 }
+.hystmodal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  opacity: 1;
+  visibility: hidden;
+  pointer-events: none;
+  overflow: hidden;
+  overflow-y: auto;
+  z-index: 99;
+  &--active {
+    opacity: 1;
+    .hystmodal__window {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  &--active,
+  &--moved {
+    visibility: visible;
+    pointer-events: auto;
+  }
+  &__opened,
+  &__shadow {
+    position: fixed;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+  }
+  &__shadow {
+    display: block;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s @anim-fast;
+    background-color: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(4px);
+    z-index: 98;
+    &--show {
+      opacity: 0.6;
+      pointer-events: auto;
+    }
+  }
+  &__wrap {
+    width: 100%;
+    min-height: 100%;
+    flex-shrink: 0;
+    flex-grow: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
+  &__window {
+    width: auto;
+    max-width: 100%;
+    flex-shrink: 0;
+    flex-grow: 0;
+    display: flex;
+    background-color: @white;
+    opacity: 0;
+    margin: 50px 15px;
+    transition: transform @anim-slow, opacity @anim-slow;
+    transform: scale(0.9);
+    overflow: visible;
+  }
+  &__close {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    display: block;
+    font-size: 1.6rem;
+    z-index: 10;
+  }
+}
 .video {
   max-width: 685px;
   border: 1px solid @blue-dark;

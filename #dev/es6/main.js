@@ -9,3 +9,12 @@
     }
   };
 })();
+
+//Modal window init
+let popup = document.querySelector('.popup');
+
+if (popup) {
+  const popups = new HystModal({
+    linkAttributeName: 'data-hystmodal',
+  });
+}

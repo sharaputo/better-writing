@@ -25,9 +25,9 @@
             <div class="video__body">
             </div>
           </div>
-          <a href="#!" class="btn hero__btn">
+          <button type="button" class="btn" data-hystmodal="#contact">
             Я хочу забронировать <span>бесплатное</span> место на курсе прямо сейчас!
-          </a>
+          </button>
         </div>
       </div>
     </section>
@@ -344,7 +344,9 @@
             <div class="benefits__notification">
               Получи <span>бесплатный</span><br>доступ сегодня!!
             </div>
-            <a href="#!" class="btn benefits__btn">Я хочу забронировать БЕСПЛАТНОЕ место на курсе прямо сейчас!</a>
+            <button type="button" class="btn" data-hystmodal="#contact">
+              Я хочу забронировать <span>бесплатное</span> место на курсе прямо сейчас!
+            </button>
           </div>
         </div>
       </div>
@@ -355,9 +357,9 @@
           <h2 class="section-title action__title">
             Количество мест на курсе ограничено. Записывайся сейчас, пока остались места!
           </h2>
-          <a href="#!" class="btn action__btn">
-            Я хочу забронировать БЕСПЛАТНОЕ место на курсе прямо сейчас!
-          </a>
+          <button type="button" class="btn action__btn" data-hystmodal="#contact">
+            Я хочу забронировать <span>бесплатное</span> место на курсе прямо сейчас!
+          </button>
           <div class="action__image" aria-hidden="true">
             <img src="img/action.svg" alt="">
           </div>
@@ -366,6 +368,64 @@
     </section>
   </main>
   <!-- @import "components/footer.html" -->
+
+  <div class="hystmodal popup" id="contact" aria-hidden="true">
+    <div class="hystmodal__wrap">
+      <div class="hystmodal__window" role="dialog" aria-modal="true">
+        <button data-hystclose class="hystmodal__close">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 15 15">
+            <path fill="#fff"
+              d="m8.329 7.5 6.5-6.5a.586.586 0 0 0-.83-.828L7.5 6.672 1 .171A.586.586 0 1 0 .172 1l6.5 6.5-6.5 6.5a.586.586 0 0 0 .828.828l6.5-6.5 6.5 6.5a.584.584 0 0 0 .828 0 .586.586 0 0 0 0-.828l-6.5-6.5z" />
+          </svg>
+        </button>
+        <div class="popup__content">
+          <p class="popup__text">Оставьте ваши контактные данные и мы с вами свяжемся!</p>
+          <form id="practice__register">
+            <ul class="popup__form" role="none">
+              <li class="popup__input">
+                <label for="contact_name" class="screen-reader">Имя</label>
+                <input type="text" class="_req" id="contact_name" name="contact_name" placeholder="Имя *">
+              </li>
+              <li class="popup__input">
+                <label for="contact_email" class="screen-reader">Email</label>
+                <input type="email" class="_email _req" id="contact_email" name="contact_email" placeholder="Email *">
+              </li>
+              <li class="popup__input">
+                <label for="contact_phone" class="screen-reader">Телефон</label>
+                <input type="tel" class="_phone _req" id="contact_phone" name="contact_phone" placeholder="Телефон *">
+              </li>
+            </ul>
+            <div class="popup__error">Пожалуйста, заполните все обязательные поля</div>
+            <button type="submit" class="popup__btn" data-hystmodal="#contact_success">
+              Записаться
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hystmodal popup" id="contact_success" aria-hidden="true">
+    <div class="hystmodal__wrap">
+      <div class="hystmodal__window" role="dialog" aria-modal="true">
+        <button data-hystclose class="hystmodal__close">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 15 15">
+            <path fill="#fff"
+              d="m8.329 7.5 6.5-6.5a.586.586 0 0 0-.83-.828L7.5 6.672 1 .171A.586.586 0 1 0 .172 1l6.5 6.5-6.5 6.5a.586.586 0 0 0 .828.828l6.5-6.5 6.5 6.5a.584.584 0 0 0 .828 0 .586.586 0 0 0 0-.828l-6.5-6.5z" />
+          </svg>
+        </button>
+        <div class="popup__success">
+          <div class="popup__icon">
+            <img src="img/icons/icon-success.svg" alt="">
+          </div>
+          <p class="popup__text">
+            Вы успешно подали заявку.<br>
+            В ближайшее время мы с вами свяжемся.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- @import "components/scripts.html" -->
 </body>
 
