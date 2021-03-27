@@ -286,10 +286,23 @@ body {
       &::placeholder {
         color: #979797;
       }
+      &._error {
+        border: 1px solid red;
+        &::placeholder {
+          color: red;
+        }
+      }
     }
   }
   &__error {
     display: none;
+    max-width: 310px;
+    font-size: 1.4rem;
+    color: red;
+    margin-top: 10px;
+    &._active {
+      display: block;
+    }
   }
   &__btn {
     width: 100%;
