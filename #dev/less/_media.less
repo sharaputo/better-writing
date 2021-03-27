@@ -24,6 +24,50 @@
       margin-bottom: 25px;
     }
   }
+  .benefits {
+    &__title {
+      margin-bottom: 20px;
+    }
+    &__image {
+      padding: 0;
+      margin-bottom: -27px;
+    }
+    &__info {
+      padding: 55px 15px 30px;
+      border-width: 3px;
+    }
+    &__list {
+      margin-bottom: 25px;
+    }
+    &__item {
+      &::before {
+        flex-basis: 11px;
+        width: 11px;
+        height: 11px;
+        margin-top: 4px;
+        margin-right: 5px;
+      }
+      & + & {
+        margin-top: 15px;
+      }
+      .text {
+        font-size: 1.4rem;
+        margin-right: 10px;
+      }
+      .price {
+        flex-basis: 110px;
+        font-size: 1.6rem;
+      }
+    }
+    &__price {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    &__notification {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+  }
   .block {
     border-width: 3px;
     &__header {

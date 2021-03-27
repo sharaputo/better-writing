@@ -22,6 +22,79 @@
     margin-bottom: 15px;
   }
 }
+.benefits {
+  &__title {
+    margin-bottom: 50px;
+  }
+  &__image {
+    padding: 0 15px;
+    margin-bottom: -70px;
+    z-index: 2;
+  }
+  &__info {
+    padding: 90px 90px 70px;
+    border: 4px solid @blue-dark;
+  }
+  &__list {
+    text-align: left;
+    margin-bottom: 40px;
+  }
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    &::before {
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 25px;
+      content: '';
+      width: 25px;
+      height: 25px;
+      background-color: @yellow;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+    & + & {
+      margin-top: 20px;
+    }
+    .text {
+      flex-grow: 0;
+      flex-shrink: 1;
+      flex-basis: 335px;
+      margin-right: 20px;
+    }
+    .price {
+      flex-grow: 0;
+      flex-shrink: 1;
+      flex-basis: 110px;
+      font-size: 3rem;
+      font-weight: 800;
+      color: @blue-light;
+      margin-left: auto;
+    }
+  }
+  &__price {
+    font-size: 3.8rem;
+    font-weight: 800;
+    color: @blue-dark;
+    margin-bottom: 40px;
+    span {
+      color: @blue-light;
+    }
+  }
+  &__notification {
+    font-size: 4rem;
+    font-weight: 800;
+    color: @blue-dark;
+    margin-bottom: 40px;
+    span {
+      text-transform: uppercase;
+      color: @yellow;
+    }
+  }
+  &__btn {
+    max-width: 502px;
+  }
+}
 .changes {
   &__title {
     max-width: 630px;
