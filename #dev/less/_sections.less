@@ -24,12 +24,26 @@
 }
 .changes {
   &__title {
+    max-width: 630px;
     margin-bottom: 25px;
   }
   &__image {
     max-width: 590px;
     width: 100%;
     margin-top: 50px;
+  }
+}
+.course {
+  &__title {
+    margin-bottom: 30px;
+  }
+  .section-text + &__block {
+    margin-top: 50px;
+  }
+  &__block {
+    & + & {
+      margin-top: 65px;
+    }
   }
 }
 .hero {
@@ -76,5 +90,6 @@
     color: @blue-dark;
   }
   &__body {
+    height: 200px;
   }
 }

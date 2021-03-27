@@ -24,8 +24,39 @@
       margin-bottom: 25px;
     }
   }
-  .block-subtitle {
-    font-size: 1.8rem;
+  .block {
+    border-width: 3px;
+    &__header {
+      padding: 10px 0;
+    }
+    &__title {
+      font-size: 1.8rem;
+    }
+    &__body {
+      padding: 30px 15px;
+    }
+    &__image {
+      padding: 0 15px;
+      margin-bottom: 30px;
+    }
+    &__list {
+      padding-top: 20px;
+      padding-left: 20px;
+      border-left-width: 2px;
+    }
+    &__item {
+      & + & {
+        margin-top: 20px;
+      }
+      &::before {
+        width: 16px;
+        height: 16px;
+        left: -29px;
+      }
+    }
+    &__label {
+      font-size: 1.8rem;
+    }
   }
   .btn {
     font-size: 1.6rem;
@@ -37,6 +68,19 @@
     }
     &__image {
       margin-top: 20px;
+    }
+  }
+  .course {
+    &__title {
+      margin-bottom: 20px;
+    }
+    .section-text + &__block {
+      margin-top: 20px;
+    }
+    &__block {
+      & + & {
+        margin-top: 30px;
+      }
     }
   }
   .footer {
