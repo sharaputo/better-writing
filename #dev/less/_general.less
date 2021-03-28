@@ -21,6 +21,50 @@ body {
   color: @black;
   padding-top: 86px;
 }
+@transformUpStart: translate(0, 120%);
+@transformUpEnd: translate(0, 0);
+@transformLeftStart: translate(120%, 0);
+@transformLeftEnd: translate(0, 0);
+@transformRightStart: translate(-120%, 0);
+@transformRightEnd: translate(0, 0);
+@transformScaleStart: scale(0);
+@transformScaleEnd: scale(1);
+.anim-up {
+  transform: @transformUpStart;
+  opacity: 0;
+  transition: transform @anim-slow;
+  &.active {
+    transform: @transformUpEnd;
+    opacity: 1;
+  }
+}
+.anim-left {
+  transform: @transformLeftStart;
+  opacity: 0;
+  transition: transform @anim-slow;
+  &.active {
+    transform: @transformLeftEnd;
+    opacity: 1;
+  }
+}
+.anim-right {
+  transform: @transformRightStart;
+  opacity: 0;
+  transition: transform @anim-slow;
+  &.active {
+    transform: @transformRightEnd;
+    opacity: 1;
+  }
+}
+.anim-scale {
+  transform: @transformScaleStart;
+  opacity: 0;
+  transition: transform @anim-slow;
+  &.active {
+    transform: @transformScaleEnd;
+    opacity: 1;
+  }
+}
 
 .block {
   border-style: solid;
