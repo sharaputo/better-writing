@@ -1,4 +1,6 @@
 .about {
+  overflow-x: hidden;
+  overflow-y: visible;
   &__title {
     margin-bottom: 30px;
   }
@@ -6,8 +8,7 @@
     margin-bottom: 15px;
   }
   &__polaroid {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin: 50px auto;
     &:last-child {
       margin-bottom: 0;
     }
@@ -17,12 +18,19 @@
     font-family: @caption;
     font-style: italic;
     font-weight: 400;
+    text-align: left;
     color: @blue-light;
+    align-self: flex-start;
     margin-top: 15px;
     margin-bottom: 15px;
   }
+  &__text {
+    text-align: left;
+  }
 }
 .action {
+  overflow-x: hidden;
+  overflow-y: visible;
   &__title {
     max-width: 715px;
     margin-bottom: 50px;
@@ -36,6 +44,8 @@
   }
 }
 .benefits {
+  overflow-x: hidden;
+  overflow-y: visible;
   &__title {
     margin-bottom: 50px;
   }
@@ -88,11 +98,8 @@
   &__price {
     font-size: 3.8rem;
     font-weight: 800;
-    color: @blue-dark;
+    color: #ff4646;
     margin-bottom: 40px;
-    span {
-      color: @blue-light;
-    }
   }
   &__notification {
     font-size: 4rem;
@@ -101,11 +108,13 @@
     margin-bottom: 40px;
     span {
       text-transform: uppercase;
-      color: @yellow;
+      color: #ff4646;
     }
   }
 }
 .changes {
+  overflow-x: hidden;
+  overflow-y: visible;
   &__title {
     max-width: 630px;
     margin-bottom: 25px;
@@ -117,6 +126,8 @@
   }
 }
 .course {
+  overflow-x: hidden;
+  overflow-y: visible;
   &__title {
     margin-bottom: 30px;
   }
@@ -145,7 +156,7 @@
     }
     .highlight {
       text-transform: uppercase;
-      color: @yellow;
+      color: #ff4646;
     }
   }
   &__video {

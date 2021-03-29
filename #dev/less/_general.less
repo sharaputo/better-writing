@@ -25,7 +25,6 @@ body {
 .block {
   border-style: solid;
   border-width: 4px;
-  overflow: hidden;
   &--blue {
     border-color: @blue-light;
   }
@@ -97,6 +96,10 @@ body {
       top: 3px;
       left: -51px;
       border-radius: 50%;
+    }
+    .slideRightReturn {
+      overflow-x: hidden;
+      overflow-y: visible;
     }
   }
   &__label {
@@ -274,8 +277,6 @@ body {
     margin-bottom: 20px;
     margin-left: auto;
   }
-  &__form {
-  }
   &__input {
     & + & {
       margin-top: 15px;
@@ -371,7 +372,7 @@ body {
   color: @blue-dark;
 }
 .section-text {
-  max-width: 650px;
+  // max-width: 650px;
   & + & {
     margin-top: 15px;
   }
