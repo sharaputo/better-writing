@@ -215,20 +215,17 @@
     }
   }
   .polaroid {
-    padding: 15px;
+    overflow: hidden;
     &__wrapper {
+      padding: 15px;
+      &::before,
+      &::after {
+        width: 66px;
+        height: 18px;
+      }
+    }
+    &__image {
       padding: 20px 20px 0;
-    }
-    &::before,
-    &::after {
-      width: 66px;
-      height: 18px;
-    }
-    &::before {
-      top: 10px;
-    }
-    &::after {
-      bottom: 10px;
     }
     &__caption {
       font-size: 1.2rem;

@@ -58,6 +58,10 @@ body {
   }
   &__image {
     margin-bottom: 30px;
+    overflow: hidden;
+    img {
+      display: block;
+    }
   }
   &__list {
     text-align: left;
@@ -96,10 +100,6 @@ body {
       top: 3px;
       left: -51px;
       border-radius: 50%;
-    }
-    .slideRightReturn {
-      overflow-x: hidden;
-      overflow-y: visible;
     }
   }
   &__label {
@@ -225,28 +225,32 @@ body {
   }
 }
 .polaroid {
-  position: relative;
   max-width: 530px;
-  padding: 25px;
+  overflow: hidden;
   &__wrapper {
+    position: relative;
+    padding: 25px;
+    &::before,
+    &::after {
+      width: 120px;
+      height: 33px;
+      content: url('../img/polaroid.svg');
+      position: absolute;
+      z-index: 1;
+    }
+    &::before {
+      top: 10px;
+      left: 0;
+    }
+    &::after {
+      right: 0;
+      bottom: 10px;
+      transform: rotate(180deg);
+    }
+  }
+  &__image {
     background-color: @grey;
     padding: 40px 40px 0;
-  }
-  &::before,
-  &::after {
-    width: 120px;
-    height: 33px;
-    content: url('../img/polaroid.svg');
-    position: absolute;
-  }
-  &::before {
-    top: 10px;
-    left: 0;
-  }
-  &::after {
-    right: 0;
-    bottom: 10px;
-    transform: rotate(180deg);
   }
   &__caption {
     font-family: @caption;
