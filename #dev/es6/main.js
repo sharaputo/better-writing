@@ -11,10 +11,10 @@
 })();
 
 //Modal window init
-let popup = document.querySelector('.popup');
+let popups = document.querySelectorAll('.popup');
 
-if (popup) {
-  const popups = new HystModal({
+if (popups.length > 0) {
+  const popup = new HystModal({
     linkAttributeName: 'data-hystmodal',
   });
 }
@@ -22,7 +22,7 @@ if (popup) {
 // Contact form validation
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.querySelector('#contact_form'),
-    successPopup = document.querySelector('#contact_success'),
+    successPopup = document.querySelector('#success_open'),
     warning = document.querySelector('.popup__error');
 
   form.addEventListener('submit', formSend);
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let result = await response.json();
         removeWarning();
         form.reset();
-        successPopup.classList.add('active');
+        successPopup.click();
       } else {
         alert('Error!');
       }
