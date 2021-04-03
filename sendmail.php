@@ -9,25 +9,25 @@ $mail = new PHPMailer(true);
 $mail->Charset = 'UTF-8';
 $mail->IsHTML(true);
 
-$mail->setFrom('info@safisa.shop', 'Safisa website');
+$mail->setFrom('better-writing@gmail.com', 'Better writing');
 $mail->addAddress('sharaputo@icloud.com');
-$mail->Subject = 'New email form Safisa website';
+$mail->Subject = 'New email form Better Writing';
 
 $body = '<h1>User Contact Details</h1>';
 
-if(trim(!empty($_POST['name']))){
-  $body .= '<p><strong>Name:</strong> '.$_POST['name'].'</p>';
+if(trim(!empty($_POST['contact_name']))){
+  $body .= '<p><strong>Name:</strong> '.$_POST['contact_name'].'</p>';
 }
-$honeypot = trim($_POST["surname"]);
+$honeypot = trim($_POST['contact_surname']);
 if(!empty($honeypot)) {
-  echo "Spam!";
+  echo 'Spam!';
   exit;
 }
-if(trim(!empty($_POST['phone']))){
-  $body .= '<p><strong>Phone:</strong> '.$_POST['phone'].'</p>';
+if(trim(!empty($_POST['contact_email']))){
+  $body .= '<p><strong>Email:</strong> '.$_POST['contact_email'].'</p>';
 }
-if(trim(!empty($_POST['email']))){
-  $body .= '<p><strong>Email:</strong> '.$_POST['email'].'</p>';
+if(trim(!empty($_POST['phone']))){
+  $body .= '<p><strong>Phone:</strong> '.$_POST['contact_phone'].'</p>';
 }
 
 $mail->Body = $body;
