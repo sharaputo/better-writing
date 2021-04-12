@@ -152,3 +152,19 @@ if (animItems.length > 0) {
     animOnScroll();
   }, 400);
 }
+
+// Video custom sound control
+const soundBtn = document.querySelector('#unmute');
+
+if (soundBtn) {
+  soundBtn.addEventListener('click', playSound);
+
+  function playSound() {
+    const video = document.querySelector('#vimeo_video');
+    video.pause();
+    video.muted = false;
+    video.currentTime = 0;
+    video.load();
+    soundBtn.hidden = true;
+  }
+}

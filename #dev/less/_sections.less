@@ -173,6 +173,7 @@
     }
   }
   &__video {
+    position: relative;
     margin-bottom: 35px;
   }
 }
@@ -194,6 +195,21 @@
     color: @blue-dark;
   }
   &__body {
-    height: 200px;
+    padding-bottom: 56.25%;
+  }
+  &__btn {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    transition: transform @anim-fast;
+    z-index: 2;
+    &:hover {
+      transform: scale(1.05);
+    }
+    svg {
+      fill: @white;
+    }
   }
 }
