@@ -164,7 +164,6 @@ if (soundBtn) {
     video.pause();
     video.muted = false;
     video.currentTime = 0;
-    // video.load();
     video.play();
     soundBtn.hidden = true;
   }
