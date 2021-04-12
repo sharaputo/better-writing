@@ -55,7 +55,11 @@
               </div>
             </div>
             <div class="video__body ibg">
-              <video src="video/promo.mp4" id="vimeo_video" autoplay controls muted playsinline preload="auto"></video>
+              <video src="video/promo.mp4" id="vimeo_video" autoplay controls muted playsinline preload="auto">
+                <source scr="video/promo.webm" type=”video/webm”>
+                <source scr="video/promo.mp4" type=”video/mp4>
+                <track kind="captions" src="sampleCaption_he.vtt" scrlang="ru">
+              </video>
               <button type="button" class="video__btn" id="unmute">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                   <path
