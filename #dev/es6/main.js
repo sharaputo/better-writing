@@ -154,17 +154,33 @@ if (animItems.length > 0) {
 }
 
 // Video custom sound control
+// const soundBtn = document.querySelector('#unmute');
+
+// if (soundBtn) {
+//   soundBtn.addEventListener('click', playSound);
+
+//   function playSound() {
+//     const video = document.querySelector('#vimeo_video');
+//     video.pause();
+//     video.muted = false;
+//     video.currentTime = 0;
+//     video.play();
+//     soundBtn.hidden = true;
+//   }
+// }
+
+// Vimeo video settings
 const soundBtn = document.querySelector('#unmute');
 
 if (soundBtn) {
   soundBtn.addEventListener('click', playSound);
 
   function playSound() {
-    const video = document.querySelector('#vimeo_video');
-    video.pause();
-    video.muted = false;
-    video.currentTime = 0;
-    video.play();
+    const iframe = document.querySelector('#vimeo_video');
+    const player = new Vimeo.Player(iframe);
+    player.setCurrentTime(0);
+    player.play();
+    player.setVolume(1);
     soundBtn.hidden = true;
   }
 }
